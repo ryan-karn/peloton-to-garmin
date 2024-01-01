@@ -53,7 +53,7 @@ jobs:
           },
           "Peloton": {
             "NumWorkoutsToDownload": ${{ github.event.inputs.workoutsToDownload || env.DEFAULT_WORKOUT_NUM }},
-            "ExcludeWorkoutTypes": [ "meditation", "stretching", "rowing"],
+            "ExcludeWorkoutTypes": [ "meditation", "stretching"],
           },
           "Garmin": {
             "Upload": true,
