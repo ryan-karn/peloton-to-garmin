@@ -87,7 +87,7 @@ jobs:
         P2G_GARMIN__PASSWORD: ${{ secrets.P2G_GARMIN__PASSWORD }}
         TZ: America/Los_Angeles
     - name: rename the thing
-      run: rename ':' '-' ${{ env.OUTPUT_DIR }}/fit/*.fit
+      run: mv /app/working/upload/5499d2cb412943a7a4839b9d2f29f714_45_min_Real_Routes:_Road_to_Hana_with_Christian_Vande_Velde.fit /app/working/upload/5499d2cb412943a7a4839b9d2f29f714_45_min_Real_Routes_Road_to_Hana_with_Christian_Vande_Velde.fit
     - uses: actions/upload-artifact@v3
       if: ${{ github.event.inputs.saveLocalCopy }}
       with:
