@@ -86,6 +86,8 @@ jobs:
         P2G_GARMIN__EMAIL: ${{ secrets.P2G_GARMIN__EMAIL }}
         P2G_GARMIN__PASSWORD: ${{ secrets.P2G_GARMIN__PASSWORD }}
         TZ: America/Los_Angeles
+    - name: rename the thing
+      run: rename ':' '-' ${{ env.OUTPUT_DIR }}/fit/*.fit
     - uses: actions/upload-artifact@v3
       if: ${{ github.event.inputs.saveLocalCopy }}
       with:
