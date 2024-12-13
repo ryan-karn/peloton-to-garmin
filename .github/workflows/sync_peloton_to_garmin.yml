@@ -86,8 +86,6 @@ jobs:
         P2G_GARMIN__EMAIL: ${{ secrets.P2G_GARMIN__EMAIL }}
         P2G_GARMIN__PASSWORD: ${{ secrets.P2G_GARMIN__PASSWORD }}
         TZ: America/Los_Angeles
-    - name: rename the thing
-      run: mv /app/output/fit/d150a7207f5046928c927787ffe7f1ff_45_min_Climb:_Palomar_Mountain_Part_2_with_Christine_D\'Ercole.fit /app/output/fit/d150a7207f5046928c927787ffe7f1ff_45_min_Climb_Palomar_Mountain_Part_2_with_Christine.fit
     - uses: actions/upload-artifact@v3
       if: ${{ github.event.inputs.saveLocalCopy }}
       with:
