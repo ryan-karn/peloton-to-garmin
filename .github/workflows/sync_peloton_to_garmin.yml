@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     # The type of runner that the job will run on
     container: 
-      image:  philosowaffle/peloton-to-garmin:console-v4-rc
+      image:  philosowaffle/peloton-to-garmin:console-v4
     steps:
 
     - name: ⚙ Configure output directory
