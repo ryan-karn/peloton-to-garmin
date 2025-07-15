@@ -8,12 +8,10 @@ on:
     inputs:
       workoutsToDownload:
         type: number
-        default: "5"
+        default: "1"
       saveLocalCopy:
         type: boolean
         default: false
-  schedule:
-    - cron: '0 1 * * *'
 
 env:
   OUTPUT_DIR: /app/output
@@ -49,7 +47,7 @@ jobs:
             "IncludeTimeInHRZones": false,
             "IncludeTimeInPowerZones": false,
             "StackedWorkouts": {
-              "AutomaticallyStackWorkouts": false,
+              "AutomaticallyStackWorkouts": true,
               "MaxAllowedGapSeconds": 300
             }
           },
@@ -84,7 +82,7 @@ jobs:
         P2G_PELOTON__PASSWORD: ${{ secrets.P2G_PELOTON__PASSWORD }}
         P2G_GARMIN__EMAIL: ${{ secrets.P2G_GARMIN__EMAIL }}
         P2G_GARMIN__PASSWORD: ${{ secrets.P2G_GARMIN__PASSWORD }}
-        TZ: America/Chicago
+        TZ: America/Los_Angeles
 
     - name: ⤴ Upload output directory
       uses: actions/upload-artifact@v4
