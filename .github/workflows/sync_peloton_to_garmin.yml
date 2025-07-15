@@ -48,7 +48,7 @@ jobs:
             "IncludeTimeInPowerZones": false,
             "StackedWorkouts": {
               "AutomaticallyStackWorkouts": true,
-              "MaxAllowedGapSeconds": 300
+              "MaxAllowedGapSeconds": 60
             }
           },
           "Peloton": {
