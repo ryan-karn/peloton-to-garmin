@@ -11,7 +11,7 @@ on:
         default: "1"
       saveLocalCopy:
         type: boolean
-        default: false
+        default: true
 
 env:
   OUTPUT_DIR: /app/output
