@@ -84,8 +84,8 @@ jobs:
         P2G_GARMIN__PASSWORD: ${{ secrets.P2G_GARMIN__PASSWORD }}
         TZ: America/Los_Angeles
 
-#    - name: Run-name fit gile
-#      run: mv ${{ env.OUTPUT_DIR }}/fit/*.fit ${{ env.OUTPUT_DIR }}/fit/file.fit
+    - name: Run-name fit gile
+      run: mv ${{ env.OUTPUT_DIR }}/fit/*.fit ${{ env.OUTPUT_DIR }}/fit/file.fit
 
     - name: ⤴ Upload output directory
       uses: actions/upload-artifact@v4
