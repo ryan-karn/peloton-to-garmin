@@ -85,7 +85,7 @@ jobs:
         TZ: America/Los_Angeles
 
     - name: Run-name fit gile
-      run: mv ${{ env.OUTPUT_DIR }}/fit/*.fit ${{ env.OUTPUT_DIR }}/fit/file.fit
+      run: rename 's/[:<>*?]/_/g' ${{ env.OUTPUT_DIR }}/fit/*.fit
 
     - name: ⤴ Upload output directory
       uses: actions/upload-artifact@v4
