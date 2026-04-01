@@ -85,7 +85,7 @@ jobs:
         TZ: America/Los_Angeles
 
     - name: Run-name fit gile
-      run: for file in ${{ env.OUTPUT_DIR }}/fit/*; do new_name=$(echo "$file" | sed 's/[^a-zA-Z0-9.]//g') mv "$file" "$new_name"; done
+      run: mv ${{ env.OUTPUT_DIR }}/fit/*.fit ${{ env.OUTPUT_DIR }}/fit/file.fit
 
     - name: ⤴ Upload output directory
       uses: actions/upload-artifact@v4
