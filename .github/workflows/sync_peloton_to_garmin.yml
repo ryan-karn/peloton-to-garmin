@@ -82,7 +82,7 @@ jobs:
         P2G_PELOTON__PASSWORD: ${{ secrets.P2G_PELOTON__PASSWORD }}
         P2G_GARMIN__EMAIL: ${{ secrets.P2G_GARMIN__EMAIL }}
         P2G_GARMIN__PASSWORD: ${{ secrets.P2G_GARMIN__PASSWORD }}
-        P2G_GARMIN__SERVICETICKET: ST-0349186-lEC9jEfMcrE78Pim14wb-sso
+        P2G_GARMIN__SERVICETICKET: ST-0252507-MF4sp7bm4nxYCS39Sq2r-sso
         TZ: America/Los_Angeles
 
     - name: Run-name fit gile
