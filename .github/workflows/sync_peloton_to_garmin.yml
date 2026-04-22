@@ -85,7 +85,7 @@ jobs:
         P2G_GARMIN__SERVICETICKET: ST-0252507-MF4sp7bm4nxYCS39Sq2r-sso
         TZ: America/Los_Angeles
 
-    - name: Run-name fit gile
+    #- name: Run-name fit gile
       #run: mv ${{ env.OUTPUT_DIR }}/fit/*.fit ${{ env.OUTPUT_DIR }}/fit/file.fit
       #run: for f in ${{ env.OUTPUT_DIR }}/fit/*; do mv -- "$f" "${f//:/_}"; done
 
