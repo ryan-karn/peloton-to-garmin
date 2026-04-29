@@ -12,6 +12,9 @@ on:
       saveLocalCopy:
         type: boolean
         default: true
+      renameFile:
+        type: boolean
+        default: false
 
 env:
   OUTPUT_DIR: /app/output
@@ -84,10 +87,11 @@ jobs:
         P2G_GARMIN__PASSWORD: ${{ secrets.P2G_GARMIN__PASSWORD }}
         P2G_GARMIN__SERVICETICKET: ST-0252507-MF4sp7bm4nxYCS39Sq2r-sso
         TZ: America/Los_Angeles
+        
 
-    #- name: Run-name fit gile
-      #run: mv ${{ env.OUTPUT_DIR }}/fit/*.fit ${{ env.OUTPUT_DIR }}/fit/file.fit
-      #run: for f in ${{ env.OUTPUT_DIR }}/fit/*; do mv -- "$f" "${f//:/_}"; done
+    - name: Run-name fit file
+      run: mv ${{ env.OUTPUT_DIR }}/fit/*.fit ${{ env.OUTPUT_DIR }}/fit/file.fit
+      if: ${{ github.event.inputs.renameFile == 'true' }}
 
     - name: ⤴ Upload output directory
       uses: actions/upload-artifact@v4
