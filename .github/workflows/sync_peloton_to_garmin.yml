@@ -91,13 +91,12 @@ jobs:
 
     - name: Run-name fit file
       run: |
-          count = 0
+          count=0
           for file in ${{ env.OUTPUT_DIR }}/fit/*.fit; do
             # Check if the file actually exists
             if [ -f "$file" ]; then
               count++
-              echo "found: '$file'"
-              mv "$file" ${{ env.OUTPUT_DIR }}/fit/file_"$count".fit
+              echo "found: '$file' '$count'"
             fi
           done
       if: ${{ github.event.inputs.renameFile == 'true' }}
