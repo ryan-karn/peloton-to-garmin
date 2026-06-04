@@ -95,7 +95,8 @@ jobs:
           for file in ${{ env.OUTPUT_DIR }}/fit/*.fit; do
             # Check if the file actually exists
             if [ -f "$file" ]; then
-              ((count++))
+              # Increment counter
+              count=$((count + 1))
               echo "found: '$file' '$count'"
             fi
           done
