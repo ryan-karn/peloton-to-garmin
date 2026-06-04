@@ -98,6 +98,19 @@ jobs:
               # Increment counter
               count=$((count + 1))
               echo "found: '$file' '$count'"
+              
+              # Remove colon from filename
+              clean_name="${file//:/}"
+            
+              # Extract directory and filename
+              dir_path=$(dirname "$clean_name")
+              base_name=$(basename "$clean_name")
+            
+              # Construct the new filename with the counter
+              new_name="${dir_path}/file_${count}_${base_name}"
+
+              # Rename the file
+              mv "$file" "$new_name"
             fi
           done
       if: ${{ github.event.inputs.renameFile == 'true' }}
