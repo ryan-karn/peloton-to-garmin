@@ -90,7 +90,20 @@ jobs:
         
 
     - name: Run-name fit file
-      run: mv ${{ env.OUTPUT_DIR }}/fit/*.fit ${{ env.OUTPUT_DIR }}/fit/file.fit
+      run: |
+          for file in ${{ env.OUTPUT_DIR }}/fit/*.fit; do
+            # Check if the file actually exists
+            if [ -f "$file" ]; then
+              # Remove colons using Bash string replacement
+              new_name="${file//:/}"
+              
+              # Rename the file if the name changed
+              if [ "$file" != "$new_name" ]; then
+                mv "$file" "$new_name"
+                echo "Renamed: '$file' to '$new_name'"
+              fi
+            fi
+          done
       if: ${{ github.event.inputs.renameFile == 'true' }}
 
     - name: ⤴ Upload output directory
