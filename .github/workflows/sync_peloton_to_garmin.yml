@@ -15,6 +15,9 @@ on:
       renameFile:
         type: boolean
         default: false
+      combineWorkouts:
+        type: boolean
+        default: false
 
 env:
   OUTPUT_DIR: /app/output
@@ -50,8 +53,8 @@ jobs:
             "IncludeTimeInHRZones": false,
             "IncludeTimeInPowerZones": false,
             "StackedWorkouts": {
-              "AutomaticallyStackWorkouts": false,
-              "MaxAllowedGapSeconds": 120
+              "AutomaticallyStackWorkouts": ${{ github.event.inputs.combineWorkouts || false }},
+              "MaxAllowedGapSeconds": 600
             }
           },
           "Peloton": {
