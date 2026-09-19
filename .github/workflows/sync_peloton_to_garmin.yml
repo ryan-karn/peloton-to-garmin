@@ -54,7 +54,7 @@ jobs:
             "IncludeTimeInPowerZones": false,
             "StackedWorkouts": {
               "AutomaticallyStackWorkouts": ${{ github.event.inputs.combineWorkouts || false }},
-              "MaxAllowedGapSeconds": 600
+              "MaxAllowedGapSeconds": 60
             }
           },
           "Peloton": {
